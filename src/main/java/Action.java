@@ -3,6 +3,7 @@ import Object.*;
 import Person.*;
 import Record.PlaceInfo;
 import Enum.Mood;
+import Exception.*;
 
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Action {
-    public static void main (String[] args) {
+    public static void main (String[] args) throws GrowthLimitException {
 
         Korotyshki neznaika = new Neznaika();
         neznaika.setName("Незнайка");
@@ -59,14 +60,31 @@ public class Action {
 
         Place zoo = new Zoo();
         zoo.setName("зоопарк");
-        Animal leon = new Leon();
-        leon.setName("лев");
-        Animal zebra = new Zebra();
-        zebra.setName("зебра");
-        Animal elephant = new Elephant();
-        elephant.setName("слон");
-        Animal giraffe = new Giraffe();
-        giraffe.setName("жираф");
+
+        Animal leon = null;
+        try {
+            leon = new Leon("лев", 120);
+        } catch (GrowthLimitException e) {
+            System.err.println(e.getMessage());
+        }
+        Animal zebra = null;
+        try {
+            zebra = new Zebra("зебра", 100);
+        } catch (GrowthLimitException e) {
+            System.err.println(e.getMessage());
+        }
+        Animal elephant = null;
+        try {
+            elephant = new Elephant("слон", 300);
+        } catch (GrowthLimitException e) {
+            System.err.println(e.getMessage());
+        }
+        Animal giraffe = null;
+        try {
+            giraffe = new Giraffe("жираф", 300);
+        } catch (GrowthLimitException e) {
+            System.err.println(e.getMessage());
+        }
         Enclosure enclosure1 = new Enclosure();
         enclosure1.addAnimal(leon);
         Enclosure enclosure2 = new Enclosure();
