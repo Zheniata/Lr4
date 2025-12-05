@@ -5,4 +5,9 @@ public final class Neznaika extends Korotyshki {
     public void act() {
         System.out.println("Иследует мир");
     }
+
+   @Override
+    public String toString(){
+        return "Незнайка";
+   }
 }

@@ -2,7 +2,7 @@ package Object;
 
 import Interface.Taste;
 
-public class Dish implements Taste {
+public abstract class Dish implements Taste {
     String name;
     Integer price;
     boolean isDelicious;
@@ -43,4 +43,9 @@ public class Dish implements Taste {
     public void setDelicious(boolean delicious) {
         isDelicious = delicious;
     }
+
+    public String ingredients(){
+        return "";
+    }
+
 }

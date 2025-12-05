@@ -1,6 +1,6 @@
 package Location;
 
-import Object.Dish;
+import Object.*;
 import java.util.ArrayList;
 import Person.Korotyshki;
 import Exception.NoFoodException;
@@ -19,11 +19,11 @@ public class Canteen extends Place {
     }
     public void serveFood(Korotyshki[] korotyshki) throws NoFoodException {
         if (korotyshki.length > menu.size()) {
-            throw new NoFoodException("Еды не хватило - коротышка умер от голода");
+            throw new NoFoodException();
         }
 
         for (int i = 0; i < korotyshki.length; i++) {
-            System.out.println(korotyshki[i].getName() + " получает " + menu.get(i).isDelicious()+ " " + menu.get(i).getName());
+            System.out.println(korotyshki[i].getName() + " получает " + menu.get(i).isDelicious() + " " + menu.get(i).getName() + menu.get(i).ingredients());
         }
     }
 }

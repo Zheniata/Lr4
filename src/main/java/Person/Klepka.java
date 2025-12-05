@@ -5,4 +5,9 @@ public final class Klepka extends Korotyshki {
     public void act() {
         System.out.println("Готовит");
     }
+
+    @Override
+    public String toString() {
+        return "Клепка";
+    }
 }

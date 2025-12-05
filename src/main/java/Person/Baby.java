@@ -5,4 +5,9 @@ public final class Baby extends Korotyshki {
     public void act() {
         System.out.println("Малышка выметает мусор из сарая");
     }
+
+    @Override
+    public String toString() {
+        return "Клепка";
+    }
 }

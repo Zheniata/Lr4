@@ -1,7 +1,8 @@
 package Exception;
 
 public class NoFoodException extends RuntimeException{
-    public NoFoodException(String message) {
-        super(message);
+    @Override
+    public String getMessage() {
+        return "Еды не хватило - коротышка умер от голода";
     }
 }

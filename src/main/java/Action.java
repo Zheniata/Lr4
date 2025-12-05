@@ -32,22 +32,22 @@ public class Action {
 
         Canteen canteen = new Canteen();
         canteen.setName("Столовая");
-        Dish pizza = new Salad();
-        pizza.setName("Салат");
-        pizza.setDelicious(true);
+        Dish salad = new Salad();
+        salad.setName("Салат");
+        salad.setDelicious(true);
         Dish tea = new Tea();
         tea.setName("Чай");
         tea.setDelicious(false);
         Dish soup = new Soup();
         soup.setName("Суп");
         soup.setDelicious(false);
-        canteen.addFood(pizza);
+        canteen.addFood(salad);
         canteen.addFood(tea);
         canteen.addFood(soup);
 
 
         if (neznaika.isHungry() || klepka.isHungry()) {
-            System.out.println(neznaika.name + " и " + klepka.name + " отправляются в столовую");
+            System.out.println(neznaika + " и " + klepka + " отправляются в столовую");
             neznaika.goTo(canteen);
             klepka.goTo(canteen);
             Korotyshki[] korotyshki = {neznaika, klepka};
@@ -55,7 +55,7 @@ public class Action {
             canteen.serveFood(korotyshki);
         }
         else {
-            System.out.println(neznaika.name + " и " + klepka.name + " не голодны");
+            System.out.println(neznaika + " и " + klepka + " не голодны");
         }
 
         Place zoo = new Zoo();
@@ -63,25 +63,25 @@ public class Action {
 
         Animal leon = null;
         try {
-            leon = new Leon("лев", 120);
+            leon = new Leon("Лев", 120);
         } catch (GrowthLimitException e) {
             System.err.println(e.getMessage());
         }
         Animal zebra = null;
         try {
-            zebra = new Zebra("зебра", 100);
+            zebra = new Zebra("Зебра", 100);
         } catch (GrowthLimitException e) {
             System.err.println(e.getMessage());
         }
         Animal elephant = null;
         try {
-            elephant = new Elephant("слон", 300);
+            elephant = new Elephant("Слон", 300);
         } catch (GrowthLimitException e) {
             System.err.println(e.getMessage());
         }
         Animal giraffe = null;
         try {
-            giraffe = new Giraffe("жираф", 300);
+            giraffe = new Giraffe("Жираф", 300);
         } catch (GrowthLimitException e) {
             System.err.println(e.getMessage());
         }
