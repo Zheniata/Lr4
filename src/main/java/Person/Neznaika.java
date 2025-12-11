@@ -1,9 +1,14 @@
 package Person;
+import Enum.Mood;
 
 public final class Neznaika extends Korotyshki {
     @Override
     public void act() {
         System.out.println("Иследует мир");
+    }
+
+    public Neznaika(String name, Integer age, boolean isHungry, Mood mood){
+        super(name, age, isHungry, mood);
     }
 
    @Override

@@ -13,6 +13,14 @@ public class Canteen extends Place {
             menu.add(d);
         }
     }
+    public Canteen(String name){
+        super(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Столовая";
+    }
 
     public ArrayList<Dish> getMenu() {
         return new ArrayList<>(menu);
@@ -21,7 +29,6 @@ public class Canteen extends Place {
         if (korotyshki.length > menu.size()) {
             throw new NoFoodException();
         }
-
         for (int i = 0; i < korotyshki.length; i++) {
             System.out.println(korotyshki[i].getName() + " получает " + menu.get(i).isDelicious() + " " + menu.get(i).getName() + menu.get(i).ingredients());
         }

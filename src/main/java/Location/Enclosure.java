@@ -12,6 +12,12 @@ public class Enclosure extends Place {
         }
     }
 
+    public Enclosure(Animal animal) {
+        super(animal != null ? animal.getName() : "Пустой вольер");
+        this.animal = animal;
+    }
+
+
     public void whoInEnclosure() {
         if (animal != null && animal.getName() != null) {
             System.out.println("Коротышки находят вольер, в котором находится " + animal.getName());

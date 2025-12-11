@@ -13,34 +13,18 @@ import java.util.Random;
 public class Action {
     public static void main (String[] args) throws GrowthLimitException {
 
-        Korotyshki neznaika = new Neznaika();
-        neznaika.setName("Незнайка");
-        neznaika.setHungry(true);
-        neznaika.setMood(Mood.хорошее);
-
-        Korotyshki klepka = new Klepka();
-        klepka.setName("Клепка");
-        klepka.setHungry(true);
-        klepka.setMood(Mood.веселое);
-
-        Korotyshki baby = new Baby();
-        baby.setName("Малышка");
+        Korotyshki neznaika = new Neznaika("Незнайка", 11, true, Mood.хорошее);
+        Korotyshki klepka = new Klepka("Клепка", 9, true, Mood.веселое);
+        Korotyshki baby = new Baby("Малышка", 10, true, Mood.грустное);
 
         neznaika.talkTo(klepka);
         neznaika.whatMood();
         klepka.whatMood();
 
-        Canteen canteen = new Canteen();
-        canteen.setName("Столовая");
-        Dish salad = new Salad();
-        salad.setName("Салат");
-        salad.setDelicious(true);
-        Dish tea = new Tea();
-        tea.setName("Чай");
-        tea.setDelicious(false);
-        Dish soup = new Soup();
-        soup.setName("Суп");
-        soup.setDelicious(false);
+        Canteen canteen = new Canteen("Столовая");
+        Dish salad = new Salad("Салат", 50, true);
+        Dish tea = new Tea("Чай", 15, false);
+        Dish soup = new Soup("Суп", 50, true);
         canteen.addFood(salad);
         canteen.addFood(tea);
         canteen.addFood(soup);
@@ -58,8 +42,7 @@ public class Action {
             System.out.println(neznaika + " и " + klepka + " не голодны");
         }
 
-        Place zoo = new Zoo();
-        zoo.setName("зоопарк");
+        Place zoo = new Zoo("зоопарк");
 
         Animal leon = null;
         try {
@@ -85,22 +68,18 @@ public class Action {
         } catch (GrowthLimitException e) {
             System.err.println(e.getMessage());
         }
-        Enclosure enclosure1 = new Enclosure();
-        enclosure1.addAnimal(leon);
-        Enclosure enclosure2 = new Enclosure();
-        enclosure2.addAnimal(zebra);
-        Enclosure enclosure3 = new Enclosure();
-        enclosure3.addAnimal(elephant);
-        Enclosure enclosure4 = new Enclosure();
-        enclosure4.addAnimal(giraffe);
-        Enclosure enclosure5 = new Enclosure();
-        enclosure5.addAnimal(giraffe);
+        Enclosure enclosure1 = new Enclosure(leon);
+        Enclosure enclosure2 = new Enclosure(zebra);
+        Enclosure enclosure3 = new Enclosure(elephant);
+        Enclosure enclosure4 = new Enclosure(giraffe);
+        Enclosure enclosure5 = new Enclosure(null);
 
         List<Enclosure> enclosures = new ArrayList<>();
         enclosures.add(enclosure1);
         enclosures.add(enclosure2);
         enclosures.add(enclosure3);
         enclosures.add(enclosure4);
+        enclosures.add(enclosure5);
 
         neznaika.goTo(zoo);
         klepka.goTo(zoo);
@@ -112,10 +91,11 @@ public class Action {
         for (int i = 0; i < numEnclosures; i++) {
             enclosures.get(i).whoInEnclosure();
         }
-        Shed shed = new Shed(true);
-        PlaceInfo shedInfo = new PlaceInfo("сарайчику", "маленькому");
+        PlaceInfo shedInfo = new PlaceInfo("сарая", "маленькому", false);
+        Shed shed = new Shed(shedInfo);
 
-        System.out.println("Обойдя всё вокруг, коротышки отправляются к " + shedInfo.size() + " " +shedInfo.name());
+
+        System.out.println("Обойдя всё вокруг, коротышки отправляются к сарайчкику");
         neznaika.goTo(shed);
         klepka.goTo(shed);
 

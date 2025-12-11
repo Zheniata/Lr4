@@ -7,7 +7,7 @@ public class Zebra extends Animal {
     }
 
     @Override
-    public int getMaxGrowth(){
-        return 100;
+    public String toString(){
+        return "Зебра";
     }
 }

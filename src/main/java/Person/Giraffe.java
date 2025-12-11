@@ -7,8 +7,8 @@ public class Giraffe extends Animal{
     }
 
     @Override
-    public int getMaxGrowth(){
-        return 400;
+    public String toString(){
+        return "Жираф";
     }
 
 }

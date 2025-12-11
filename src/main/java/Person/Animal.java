@@ -1,14 +1,19 @@
 package Person;
 
 import Exception.GrowthLimitException;
+import Location.Place;
+
+import java.util.Objects;
 
 public abstract class Animal extends livingCreatures {
     String name;
     boolean isFriendly;
     private int currentSize;
-    private final int maxGrowth;
+    private int maxGrowth;
 
-    public abstract int getMaxGrowth();
+    public int getMaxGrowth() {
+        return maxGrowth;
+    }
 
     public int getCurrentSize() {
         return currentSize;
@@ -44,6 +49,18 @@ public abstract class Animal extends livingCreatures {
 
     public void setFriendly(boolean friendly) {
         isFriendly = friendly;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Animal that = (Animal) obj;
+        return Objects.equals(this.getName(), that.getName());
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
     }
 
 }

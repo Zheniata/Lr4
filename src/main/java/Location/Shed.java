@@ -2,16 +2,23 @@ package Location;
 import Record.PlaceInfo;
 
 public class Shed extends Place{
-    String name;
     private boolean isOpen;
     private PlaceInfo info;
 
-    public Shed (PlaceInfo info) {
+    public Shed(String name, PlaceInfo info, boolean isOpen) {
+        super(name);
         this.info = info;
+        this.isOpen = isOpen;
     }
 
-    public Shed(boolean isOpen) {
+    public Shed(PlaceInfo info, boolean isOpen) {
+        super(info.name());            // ← передаём имя из record в родительский класс Place
+        this.info = info;
         this.isOpen = isOpen;
+    }
+
+    public Shed(PlaceInfo info) {
+        this(info, false); // вызываем основной конструктор с isOpen = false
     }
 
     public void setOpen(boolean open) {
