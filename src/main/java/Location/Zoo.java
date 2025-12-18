@@ -7,7 +7,10 @@ public class Zoo extends Place {
     }
 
     @Override
-    public String toString(){
-        return "Зоопарк";
+    public String toString() {
+        return "Zoo{" +
+                "name='" + name + '\'' +
+                ", size=" + size +
+                '}';
     }
 }

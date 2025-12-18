@@ -19,7 +19,11 @@ public class Canteen extends Place {
 
     @Override
     public String toString() {
-        return "Столовая";
+        return "Canteen{" +
+                "name='" + name + '\'' +
+                ", menu=" + menu +
+                ", size=" + size +
+                '}';
     }
 
     public ArrayList<Dish> getMenu() {

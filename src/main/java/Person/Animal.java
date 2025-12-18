@@ -6,18 +6,9 @@ import Location.Place;
 import java.util.Objects;
 
 public abstract class Animal extends livingCreatures {
-    String name;
     boolean isFriendly;
     private int currentSize;
     private int maxGrowth;
-
-    public int getMaxGrowth() {
-        return maxGrowth;
-    }
-
-    public int getCurrentSize() {
-        return currentSize;
-    }
 
     public Animal(String name, int initialSize, int maxGrowth) throws GrowthLimitException {
         this.name = name;
@@ -33,15 +24,7 @@ public abstract class Animal extends livingCreatures {
         }
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
+    public abstract void makeSound();
 
     public boolean isFriendly() {
         return isFriendly;
@@ -49,6 +32,14 @@ public abstract class Animal extends livingCreatures {
 
     public void setFriendly(boolean friendly) {
         isFriendly = friendly;
+    }
+
+    public int getMaxGrowth() {
+        return maxGrowth;
+    }
+
+    public int getCurrentSize() {
+        return currentSize;
     }
 
     @Override

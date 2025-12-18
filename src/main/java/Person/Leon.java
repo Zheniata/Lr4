@@ -7,7 +7,18 @@ public class Leon extends Animal {
     }
 
     @Override
-    public String toString(){
-        return "Лев";
+    public void makeSound() {
+        System.out.println("Лев издает звук: 'Ррррр!'");
+    }
+
+    @Override
+    public String toString() {
+        return "Leon{" +
+                ", name='" + name + '\'' +
+                ", isFriendly=" + isFriendly +
+                ", age=" + age +
+                ", isHungry=" + isHungry +
+                ", mood=" + mood +
+                '}';
     }
 }

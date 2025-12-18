@@ -5,7 +5,7 @@ import Interface.MoodState;
 
 abstract public class livingCreatures implements MoodState {
     public String name;
-    Integer age;
+    int age;
     boolean isHungry;
     Mood mood;
 

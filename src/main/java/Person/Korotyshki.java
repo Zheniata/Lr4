@@ -11,10 +11,10 @@ abstract public class Korotyshki extends livingCreatures {
         this.currentPlace = p;
     }
     public void talkTo(Korotyshki k) {
-        System.out.println(this + " разговариевает с " + k);
+        System.out.println(this.name + " разговариевает с " + k.name);
     }
     public void whatMood() {
-        System.out.println("У " + this + " " + getCurrentMood() + " настроение");
+        System.out.println("У " + this.name + " " + getCurrentMood() + " настроение");
     }
     @Override
     public boolean equals(Object obj) {
@@ -28,7 +28,7 @@ abstract public class Korotyshki extends livingCreatures {
         return Objects.hash(getName());
     }
     public Korotyshki(String name, Integer age, boolean isHungry, Mood mood) {
-        this.name = name;      // ← можно присвоить напрямую, если поля public
+        this.name = name;
         this.age = age;
         this.isHungry = isHungry;
         this.mood = mood;

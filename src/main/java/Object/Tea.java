@@ -12,7 +12,11 @@ public class Tea extends Dish{
     }
 
     @Override
-    public String toString(){
-        return "Чай";
+    public String toString() {
+        return "Tea{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", isDelicious=" + isDelicious +
+                '}';
     }
 }

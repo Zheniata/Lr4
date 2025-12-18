@@ -7,7 +7,18 @@ public class Zebra extends Animal {
     }
 
     @Override
-    public String toString(){
-        return "Зебра";
+    public void makeSound() {
+        System.out.println("Зебра издает звук: 'И-го-го!'");
+    }
+
+    @Override
+    public String toString() {
+        return "Zebra{" +
+                "isFriendly=" + isFriendly +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", isHungry=" + isHungry +
+                ", mood=" + mood +
+                '}';
     }
 }

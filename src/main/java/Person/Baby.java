@@ -13,6 +13,12 @@ public final class Baby extends Korotyshki {
 
     @Override
     public String toString() {
-        return "Клепка";
+        return "Baby{" +
+                "currentPlace=" + currentPlace +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", isHungry=" + isHungry +
+                ", mood=" + mood +
+                '}';
     }
 }

@@ -12,7 +12,11 @@ public class Soup extends Dish{
     }
 
     @Override
-    public String toString(){
-        return "Суп";
+    public String toString() {
+        return "Soup{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", isDelicious=" + isDelicious +
+                '}';
     }
 }

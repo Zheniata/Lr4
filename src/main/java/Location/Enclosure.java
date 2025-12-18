@@ -21,9 +21,19 @@ public class Enclosure extends Place {
     public void whoInEnclosure() {
         if (animal != null && animal.getName() != null) {
             System.out.println("Коротышки находят вольер, в котором находится " + animal.getName());
+            animal.makeSound();
         } else {
             System.out.println("Коротышки находят пустой вольер");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Enclosure{" +
+                "animal=" + animal +
+                ", name='" + name + '\'' +
+                ", size=" + size +
+                '}';
     }
 }
 

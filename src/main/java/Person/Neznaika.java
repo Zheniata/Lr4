@@ -11,8 +11,14 @@ public final class Neznaika extends Korotyshki {
         super(name, age, isHungry, mood);
     }
 
-   @Override
-    public String toString(){
-        return "Незнайка";
-   }
+    @Override
+    public String toString() {
+        return "Neznaika{" +
+                "currentPlace=" + currentPlace +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", isHungry=" + isHungry +
+                ", mood=" + mood +
+                '}';
+    }
 }

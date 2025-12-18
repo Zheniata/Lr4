@@ -7,8 +7,18 @@ public class Giraffe extends Animal{
     }
 
     @Override
-    public String toString(){
-        return "Жираф";
+    public void makeSound() {
+        System.out.println("Жираф издает звук: 'Му-у-у..'");
     }
 
+    @Override
+    public String toString() {
+        return "Giraffe{" +
+                "name='" + name + '\'' +
+                ", isFriendly=" + isFriendly +
+                ", age=" + age +
+                ", isHungry=" + isHungry +
+                ", mood=" + mood +
+                '}';
+    }
 }

@@ -31,7 +31,7 @@ public class Action {
 
 
         if (neznaika.isHungry() || klepka.isHungry()) {
-            System.out.println(neznaika + " и " + klepka + " отправляются в столовую");
+            System.out.println(neznaika.name + " и " + klepka.name + " отправляются в столовую");
             neznaika.goTo(canteen);
             klepka.goTo(canteen);
             Korotyshki[] korotyshki = {neznaika, klepka};
@@ -91,19 +91,21 @@ public class Action {
         for (int i = 0; i < numEnclosures; i++) {
             enclosures.get(i).whoInEnclosure();
         }
-        PlaceInfo shedInfo = new PlaceInfo("сарая", "маленькому", false);
-        Shed shed = new Shed(shedInfo);
 
+        PlaceInfo shedInfo = new PlaceInfo("Сарайчик", "маленький", true);
+        Shed shed = new Shed(shedInfo);
 
         System.out.println("Обойдя всё вокруг, коротышки отправляются к сарайчкику");
         neznaika.goTo(shed);
         klepka.goTo(shed);
 
-        System.out.println(shed.isOpen());
-        if (shed.isDoorOpen()){
+        System.out.println(shed.isOpenMessage());
+        if (shed.isOpen()){
             System.out.println(neznaika.getName() + " и " + klepka.getName() + " встречают " + baby.getName());
             baby.act();
         }
 
     }
 }
+
+
