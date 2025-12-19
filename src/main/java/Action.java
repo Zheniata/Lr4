@@ -13,9 +13,9 @@ import java.util.Random;
 public class Action {
     public static void main (String[] args) throws GrowthLimitException {
 
-        Korotyshki neznaika = new Neznaika("Незнайка", 11, true, Mood.хорошее);
-        Korotyshki klepka = new Klepka("Клепка", 9, true, Mood.веселое);
-        Korotyshki baby = new Baby("Малышка", 10, true, Mood.грустное);
+        Korotyshki neznaika = new Neznaika("Незнайка", 11, true, Mood.good);
+        Korotyshki klepka = new Klepka("Клепка", 9, true, Mood.happy);
+        Korotyshki baby = new Baby("Малышка", 10, true, Mood.sad);
 
         neznaika.talkTo(klepka);
         neznaika.whatMood();

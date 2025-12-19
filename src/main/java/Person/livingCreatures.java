@@ -10,7 +10,20 @@ abstract public class livingCreatures implements MoodState {
     Mood mood;
 
     public String getCurrentMood(){
-        return mood.toString();
+        String strMood = "";
+        if (mood == Mood.good){
+             strMood = "хорошее";
+        }
+        if (mood == Mood.happy){
+            strMood = "веселое";
+        }
+        if (mood == Mood.bad){
+            strMood = "плохое";
+        }
+        if (mood == Mood.sad){
+            strMood = "грустное";
+        }
+        return strMood;
     }
 
     public void setMood(Mood mood) {

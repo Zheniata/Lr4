@@ -1,5 +1,5 @@
 package Enum;
 
 public enum Mood {
-    хорошее, плохое, грустное, веселое
+    good, bad, sad, happy
 }
