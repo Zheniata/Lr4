@@ -69,5 +69,4 @@ public abstract class Dish implements Taste {
     public int hashCode() {
         return Objects.hash(getName());
     }
-
 }

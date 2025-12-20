@@ -1,6 +1,8 @@
 package Location;
 import Record.PlaceInfo;
 
+import java.util.Objects;
+
 public class Shed extends Place {
     private final PlaceInfo info;
 
@@ -20,5 +22,18 @@ public class Shed extends Place {
     @Override
     public String toString() {
         return info.name() + (isOpen() ? "открыт" : "закрыт");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Shed shed = (Shed) o;
+        return Objects.equals(info, shed.info);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), info);
     }
 }

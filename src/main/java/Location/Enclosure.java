@@ -2,6 +2,8 @@ package Location;
 
 import Person.Animal;
 
+import java.util.Objects;
+
 
 public class Enclosure extends Place {
     private Animal animal;
@@ -34,6 +36,19 @@ public class Enclosure extends Place {
                 ", name='" + name + '\'' +
                 ", size=" + size +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Enclosure enclosure = (Enclosure) o;
+        return Objects.equals(animal, enclosure.animal);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), animal);
     }
 }
 
